@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/table_overview.dart';
+import 'screens/role_selection.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Catering System',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: TableOverviewScreen(),
+      home: RoleSelectionScreen(),
     );
   }
 }
