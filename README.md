@@ -131,3 +131,94 @@ Nachricht erhalten: Test von Tisch 3
 
 > Dieses Projekt wurde von Paul Forthuber begonnen und soll langfristig ausbaufähig sein.  
 > Ziel: vollständige digitale Lösung für Servicepersonal, Küche & Bar in der Gastronomie – offline & sicher.
+
+## 🧰 Anforderungen & Installation
+
+### 🔧 Systemvoraussetzungen
+
+| Komponente           | Beschreibung                                      |
+|----------------------|---------------------------------------------------|
+| Flutter SDK          | Für die mobile App-Entwicklung                    |
+| Android Studio       | Zum Starten eines Emulators (oder echtes Gerät)  |
+| Python 3.x           | Für den lokalen Server (FastAPI)                 |
+| Pip                  | Python-Paketmanager (meist vorinstalliert)       |
+| Git                  | Für Versionierung und Teamarbeit                 |
+
+---
+
+### 📥 Installation – Schritt für Schritt
+
+#### 1. Flutter installieren
+
+👉 Anleitung: [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
+
+Danach im Terminal prüfen:
+
+```bash
+flutter doctor
+```
+
+---
+
+#### 2. Android Studio installieren
+
+👉 Download: [https://developer.android.com/studio](https://developer.android.com/studio)
+
+- Erstelle ein virtuelles Gerät im AVD Manager
+- Aktiviere USB-Debugging auf deinem echten Gerät (optional)
+
+---
+
+#### 3. Python & Pip installieren
+
+- Download: [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- Nach der Installation im Terminal prüfen:
+
+```bash
+python --version
+pip --version
+```
+
+---
+
+#### 4. FastAPI & Uvicorn installieren
+
+```bash
+pip install fastapi uvicorn
+```
+
+Optional: Anforderungen speichern
+
+```bash
+pip freeze > requirements.txt
+```
+
+---
+
+#### 5. Git installieren
+
+👉 Download: [https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+Terminal-Test:
+
+```bash
+git --version
+```
+
+---
+
+#### 6. Projekt clonen und starten
+
+```bash
+git clone https://github.com/DEIN_USERNAME/catering.git
+cd catering
+flutter pub get
+flutter run
+```
+
+Server starten:
+
+```bash
+cd catering_server
+uvicorn server:app --host 0.0.0.0 --port 8000
+```
