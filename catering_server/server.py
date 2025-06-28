@@ -1,16 +1,20 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
 from .routes.admin_routes import router as admin_router
+from .database import database
+from .routes.order_routes import router as order_router
 
 app = FastAPI()
 
 app.include_router(admin_router)
+app.include_router(order_router)
 
-class Message(BaseModel):
-    text: str
+@app.on_event("startup")
+async def startup():
+    await database.connect()
 
-@app.post("/message")
-def receive_message(msg: Message):
-    print(f"Nachricht erhalten: {msg.text}")
-    return {"status": "ok", "echo": msg.text}
+@app.on_event("shutdown")
+async def shutdown():
+    await database.disconnect()
+
+
 
